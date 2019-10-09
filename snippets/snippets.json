@@ -1,0 +1,71 @@
+{
+    "boto3": {
+        "scope": "python",
+        "prefix": "boto3",
+        "description": "import boto3",
+        "body": "import boto3"
+    },
+    "s3client": {
+        "scope": "python",
+        "prefix": "s3client",
+        "description": "S3 client snippet",
+        "body": "s3 = boto3.client('s3')"
+    },
+    "s3createbucket": {
+        "scope": "python",
+        "prefix": "s3createbucket",
+        "description": "s3 create bucket snippet",
+        "body": [
+            "response = s3.create_bucket(",
+            "    ACL='private'|'public-read'|'public-read-write'|'authenticated-read',",
+            "    Bucket='string', #REQUIRED",
+            "    CreateBucketConfiguration={",
+            "        'LocationConstraint': 'EU'|'eu-west-1'|'us-west-1'|'us-west-2'|'ap-south-1'|'ap-southeast-1'|'ap-southeast-2'|'ap-northeast-1'|'sa-east-1'|'cn-north-1'|'eu-central-1'",
+            "    },",
+            "    GrantFullControl='string',",
+            "    GrantRead='string',",
+            "    GrantReadACP='string',",
+            "    GrantWrite='string',",
+            "    GrantWriteACP='string',",
+            "    ObjectLockEnabledForBucket=True|False",
+            ")"
+        ]
+    },
+    "s3listbuckets": {
+        "scope": "python",
+        "prefix": "s3listbuckets",
+        "description": "s3 list all buckets",
+        "body": [
+            "response = s3.list_buckets()"
+        ]
+    },
+    "s3deletebucket": {
+        "scope": "python",
+        "prefix": "s3deletebucket",
+        "description": "s3 delete a bucket",
+        "body": [
+            "response = s3.delete_bucket(",
+            "    Bucket='string'",
+            ")"
+        ]
+    },
+    "s3listobjects": {
+        "scope": "python",
+        "prefix": "s3listobjects",
+        "description": "s3 list all objects in a bucket",
+        "body": [
+            "response = s3.list_objects_v2(",
+            "    Bucket='string', #REQUIRED",
+            "    Delimiter='string',",
+            "    EncodingType='url',",
+            "    MaxKeys=123,",
+            "    Prefix='string',",
+            "    ContinuationToken='string',",
+            "    FetchOwner=True|False,",
+            "    StartAfter='string',",
+            "    RequestPayer='requester'",
+            ")"
+        ]
+    },
+    
+}
