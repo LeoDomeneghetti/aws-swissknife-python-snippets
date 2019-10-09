@@ -67,6 +67,25 @@
             ")"
         ]
     },
+    "s3putobject": {
+        "scope": "python",
+        "prefix": "s3putobject",
+        "description": "S3 put a object into your bucket",
+        "body": [
+            "with open('filepath', 'rb') as f:",
+            "   response = s3.upload_fileobj(f, Bucket='string', Key='string')"
+        ]
+    },
+    "s3getobject": {
+        "scope": "python",
+        "prefix": "s3getobject",
+        "description": "S3 get a object from your bucket",
+        "body": [
+            "with open('filepath', 'wb') as f:",
+            "   response = s3.download_fileobj(Bucket='string', Key='string', f)"
+        ]
+    },
+    
     "ddbclient": {
         "scope": "python",
         "prefix": "ddbclient",
