@@ -1,5 +1,9 @@
 # AWS SwissKnife Python Snippets
 
+<p align="center">
+  <img src="images/swissknife.png"/>
+</p>
+
 This project provides a set of snippets for creating code utilizing the AWS Python SDK **boto3**.
 
 ## Requirements
