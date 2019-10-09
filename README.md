@@ -1,65 +1,30 @@
-# aws-swissknife-python-snippets README
+# AWS SwissKnife Python Snippets
 
-This is the README for your extension "aws-swissknife-python-snippets". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+This project provides a set of snippets for creating code utilizing the AWS Python SDK **boto3**.
 
 ## Requirements
+To install an extension you can run **Command Pallete** using the command Ctrl + Shift + P or Cmd + Shift + P, type Install Extensions and finally enter it, done that search for **AWS SwissKnife** and you will find the **Python Snippets** extension.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Features
+Utilizing this extension you can develop in a faster way, without the need to look in the **boto3** documentation all the time.
 
-## Extension Settings
+Start writing the service name followed by the action, you can press **⇥** to autocomplete with the snippet.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+For example, if you would like to list the buckets in your AWS account:
 
-For example:
+![demo](images/extension-example.gif)
 
-This extension contributes the following settings:
+Some snippets examples (**⇥** is `TAB` key):
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+|             Prefix | Description                  |
+|-------------------:|------------------------------|
+|          `boto3 →` | Import the AWS SDK **boto3** |
+|       `s3client →` | Create the **S3 client**     |
+| `s3createbucket →` | Create a **S3 bucket**       |
 
 ## Release Notes
-
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
+Initial release of aws-swissknife-python-snippets
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## License Summary
+This sample code is made available under the MIT-0 license. See the LICENSE file.
