@@ -2,19 +2,19 @@
     "boto3": {
         "scope": "python",
         "prefix": "boto3",
-        "description": "import boto3",
+        "description": "Import boto3",
         "body": "import boto3"
     },
     "s3client": {
         "scope": "python",
         "prefix": "s3client",
-        "description": "S3 client snippet",
+        "description": "S3 client",
         "body": "s3 = boto3.client('s3')"
     },
     "s3createbucket": {
         "scope": "python",
         "prefix": "s3createbucket",
-        "description": "s3 create bucket snippet",
+        "description": "S3 create bucket",
         "body": [
             "response = s3.create_bucket(",
             "    ACL='private'|'public-read'|'public-read-write'|'authenticated-read',",
@@ -34,7 +34,7 @@
     "s3listbuckets": {
         "scope": "python",
         "prefix": "s3listbuckets",
-        "description": "s3 list all buckets",
+        "description": "S3 list all buckets",
         "body": [
             "response = s3.list_buckets()"
         ]
@@ -42,7 +42,7 @@
     "s3deletebucket": {
         "scope": "python",
         "prefix": "s3deletebucket",
-        "description": "s3 delete a bucket",
+        "description": "S3 delete a bucket",
         "body": [
             "response = s3.delete_bucket(",
             "    Bucket='string'",
@@ -52,7 +52,7 @@
     "s3listobjects": {
         "scope": "python",
         "prefix": "s3listobjects",
-        "description": "s3 list all objects in a bucket",
+        "description": "S3 list all objects in a bucket",
         "body": [
             "response = s3.list_objects_v2(",
             "    Bucket='string', #REQUIRED",
@@ -67,5 +67,92 @@
             ")"
         ]
     },
-    
+    "ddbclient": {
+        "scope": "python",
+        "prefix": "ddbclient",
+        "description": "DynamoDB client",
+        "body": [
+            "ddb = boto3.client('dynamodb')"
+        ]
+    },
+    "ddbcreatetable": {
+        "scope": "python",
+        "prefix": "ddbcreatetable",
+        "description": "DynamoDB create a table",
+        "body": [
+            "response = ddb.create_table(",
+            "    AttributeDefinitions=[",
+            "        {",
+            "            'AttributeName': 'string',",
+            "            'AttributeType': 'S'|'N'|'B'",
+            "        },",
+            "    ],",
+            "    TableName='string',",
+            "    KeySchema=[",
+            "        {",
+            "            'AttributeName': 'string',",
+            "            'KeyType': 'HASH'|'RANGE'",
+            "        },",
+            "    ],",
+            "    LocalSecondaryIndexes=[",
+            "        {",
+            "            'IndexName': 'string',",
+            "            'KeySchema': [",
+            "                {",
+            "                    'AttributeName': 'string',",
+            "                    'KeyType': 'HASH'|'RANGE'",
+            "                },",
+            "            ],",
+            "            'Projection': {",
+            "                'ProjectionType': 'ALL'|'KEYS_ONLY'|'INCLUDE',",
+            "                'NonKeyAttributes': [",
+            "                    'string',",
+            "                ]",
+            "            }",
+            "        },",
+            "    ],",
+            "    GlobalSecondaryIndexes=[",
+            "        {",
+            "            'IndexName': 'string',",
+            "            'KeySchema': [",
+            "                {",
+            "                    'AttributeName': 'string',",
+            "                    'KeyType': 'HASH'|'RANGE'",
+            "                },",
+            "            ],",
+            "            'Projection': {",
+            "                'ProjectionType': 'ALL'|'KEYS_ONLY'|'INCLUDE',",
+            "                'NonKeyAttributes': [",
+            "                    'string',",
+            "                ]",
+            "            },",
+            "            'ProvisionedThroughput': {",
+            "                'ReadCapacityUnits': 123,",
+            "                'WriteCapacityUnits': 123",
+            "            }",
+            "        },",
+            "    ],",
+            "    BillingMode='PROVISIONED'|'PAY_PER_REQUEST',",
+            "    ProvisionedThroughput={",
+            "        'ReadCapacityUnits': 123,",
+            "        'WriteCapacityUnits': 123",
+            "    },",
+            "    StreamSpecification={",
+            "        'StreamEnabled': True|False,",
+            "        'StreamViewType': 'NEW_IMAGE'|'OLD_IMAGE'|'NEW_AND_OLD_IMAGES'|'KEYS_ONLY'",
+            "    },",
+            "    SSESpecification={",
+            "        'Enabled': True|False,",
+            "        'SSEType': 'AES256'|'KMS',",
+            "        'KMSMasterKeyId': 'string'",
+            "    },",
+            "    Tags=[",
+            "        {",
+            "            'Key': 'string',",
+            "            'Value': 'string'",
+            "        },",
+            "    ]",
+            ")"
+        ]
+    }
 }
